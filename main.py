@@ -3,14 +3,15 @@ from src.utils import create_tables, filling_tables
 from src.requests_api import get_requests
 from src.DBManager import DBManager
 
+employees_id_list = ['1942330', '49357', '78638', '2748', '2180', '1648566', '1942336', '3529', '9498120',
+                     '9498112', '4352']
 
-def main():
+
+def main() -> None:
     """
     Основная функция для запуска скрипта
-    :return:
+    :return: None
     """
-    employees_id_list = ['1942330', '49357', '78638', '2748', '2180', '1648566', '1942336', '3529',
-                         '9498120', '9498112', '4352']
     params = config()
     # Вызывается функция для создания таблиц
     create_tables(params)
