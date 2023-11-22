@@ -31,8 +31,11 @@ def user_interaction(params: dict) -> None:
             continue
         elif user_choice == '5':
             key_word = input('Введите слова для поиска: \n').split()
-            [print(vacancy) for vacancy in DBManager(params).get_vacancies_with_key(key_word)]
-            continue
+            if DBManager(params).get_vacancies_with_key(key_word):
+                [print(vacancy) for vacancy in DBManager(params).get_vacancies_with_key(key_word)]
+                continue
+            else:
+                continue
         elif user_choice == '0':
             print('>> Хорошего дня!')
             break
