@@ -1,4 +1,5 @@
 from src.config import config
+from src.user_interaction import user_interaction
 from src.utils import create_tables, filling_tables
 from src.requests_api import get_requests
 from src.DBManager import DBManager
@@ -26,12 +27,5 @@ def main() -> None:
 main()
 
 
-# проверка работы методов класса
-
-# params = config()
-# test_class = DBManager(params)
-# print(test_class.get_companies_and_vacancies_count())  # компания и кол-во вакансий
-# print(test_class.get_all_vacancies())  # все вакансии с названием компании, названия вакансииб зарплаты и ссылки
-# print(test_class.get_avg_salary())  # получает среднюю зарплату по вакансиям
-# print(test_class.get_vacancies_with_higher_salary())  # список вакансий, у которых зп выше средней по всем вакансиям.
-# print(test_class.get_vacancies_with_key(input().split()))  # поиск по вакансий по словам
+# Функция для пользовательского взаимодействия с классом DBManager через его методы.
+# user_interaction(config())
