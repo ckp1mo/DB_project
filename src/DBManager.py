@@ -68,7 +68,7 @@ class DBManager:
         conn.close()
         return result
 
-    def get_vacancies_with_key(self, key_word: list[str]):
+    def get_vacancies_with_key(self, key_word: list[str]) -> list:
         with self.connect as conn:
             with conn.cursor() as cur:
                 result_list = []
@@ -83,4 +83,7 @@ class DBManager:
                     result = cur.fetchall()
                     result_list.extend(result)
         conn.close()
-        return result_list
+        if len(result_list) == 0:
+            print('Поиск не удался')
+        else:
+            return result_list
